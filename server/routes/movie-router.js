@@ -4,10 +4,10 @@ const MovieCtrl = require('../controllers/movie-ctrl')
 
 const movieRouter = express.Router()
 
-router.post('/movie', MovieCtrl.createMovie)
-router.put('/movie/:id', MovieCtrl.updateMovie)
-router.delete('/movie/:id', MovieCtrl.deleteMovie)
-router.get('/movie/:id', MovieCtrl.getMovieById)
-router.get('/movies', MovieCtrl.getMovies)
+movieRouter.post('/movie', MovieCtrl.createMovie)
+movieRouter.put('/movie/:id', MovieCtrl.updateMovie)
+movieRouter.delete('/movie/:id', MovieCtrl.deleteMovie)
+movieRouter.get('/movie/:id', MovieCtrl.getMovieById)
+movieRouter.get('/movies', MovieCtrl.getMovies)
 
 module.exports = movieRouter

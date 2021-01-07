@@ -4,10 +4,10 @@ const CategoryCtrl = require('../controllers/category-ctrl')
 
 const categoryRouter = express.Router()
 
-router.post('/category', CategoryCtrl.createCategory)
-router.put('/category/:id', CategoryCtrl.updateCategory)
-router.delete('/category/:id', CategoryCtrl.deleteCategory)
-router.get('/category/:id', CategoryCtrl.getCategoryById)
-router.get('/categories', CategoryCtrl.getCategories)
+categoryRouter.post('/category', CategoryCtrl.createCategory)
+categoryRouter.put('/category/:id', CategoryCtrl.updateCategory)
+categoryRouter.delete('/category/:id', CategoryCtrl.deleteCategory)
+categoryRouter.get('/category/:id', CategoryCtrl.getCategoryById)
+categoryRouter.get('/categories', CategoryCtrl.getCategories)
 
 module.exports = categoryRouter

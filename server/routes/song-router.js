@@ -4,10 +4,10 @@ const SongCtrl = require('../controllers/song-ctrl')
 
 const songRouter = express.Router()
 
-router.post('/song', SongCtrl.createSong)
-router.put('/song/:id', SongCtrl.updateSong)
-router.delete('/song/:id', SongCtrl.deleteSong)
-router.get('/song/:id', SongCtrl.getSongById)
-router.get('/songs', SongCtrl.getSongs)
+songRouter.post('/song', SongCtrl.createSong)
+songRouter.put('/song/:id', SongCtrl.updateSong)
+songRouter.delete('/song/:id', SongCtrl.deleteSong)
+songRouter.get('/song/:id', SongCtrl.getSongById)
+songRouter.get('/songs', SongCtrl.getSongs)
 
 module.exports = songRouter
