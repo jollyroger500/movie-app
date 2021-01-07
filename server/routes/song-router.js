@@ -8,6 +8,6 @@ songRouter.post('/song', SongCtrl.createSong)
 songRouter.put('/song/:id', SongCtrl.updateSong)
 songRouter.delete('/song/:id', SongCtrl.deleteSong)
 songRouter.get('/song/:id', SongCtrl.getSongById)
-songRouter.get('/songs', SongCtrl.getSongs)
+songRouter.get('/song', SongCtrl.getSong)
 
 module.exports = songRouter

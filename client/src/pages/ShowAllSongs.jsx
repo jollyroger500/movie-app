@@ -10,11 +10,11 @@ const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
 `
 
-class ShowAllSongs extends Component {
+class ShowAllSong extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            songs: [],
+            song: [],
             columns: [],
             isLoading: false,
         }
@@ -23,16 +23,16 @@ class ShowAllSongs extends Component {
     componentDidMount = async () => {
         this.setState({ isLoading: true })
 
-        await api.getAllSongs().then(songs => {
+        await api.getAllSong().then(song => {
             this.setState({
-                songs: songs.data.data,
+                song: song.data.data,
                 isLoading: false,
             })
         })
     }
 
     render() {
-        const { songs, isLoading } = this.state
+        const { song, isLoading } = this.state
 
         const columns = [
             {
@@ -42,13 +42,13 @@ class ShowAllSongs extends Component {
             },
             {
                 Header: 'Notes',
-                accessor: 'rating',
+                accessor: 'notes',
                 filterable: true,
             },            
         ]
 
         let showTable = true
-        if (!songs.length) {
+        if (!song.length) {
             showTable = false
         }
 
@@ -56,7 +56,7 @@ class ShowAllSongs extends Component {
             <Wrapper>
                 {showTable && (
                     <ReactTable
-                        data={songs}
+                        data={song}
                         columns={columns}
                         loading={isLoading}
                         defaultPageSize={10}
@@ -69,4 +69,4 @@ class ShowAllSongs extends Component {
     }
 }
 
-export default ShowAllSongs
+export default ShowAllSong

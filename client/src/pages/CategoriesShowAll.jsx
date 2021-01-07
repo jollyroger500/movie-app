@@ -10,11 +10,11 @@ const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
 `
 
-class CategoriesShowAll extends Component {
+class CategoryShowAll extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            categories: [],
+            category: [],
             columns: [],
             isLoading: false,
         }
@@ -23,16 +23,16 @@ class CategoriesShowAll extends Component {
     componentDidMount = async () => {
         this.setState({ isLoading: true })
 
-        await api.getAllCategories().then(categories => {
+        await api.getAllCategory().then(category => {
             this.setState({
-                categories: categories.data.data,
+                category: category.data.data,
                 isLoading: false,
             })
         })
     }
 
     render() {
-        const { categories, isLoading } = this.state
+        const { category, isLoading } = this.state
 
         const columns = [
             {
@@ -48,7 +48,7 @@ class CategoriesShowAll extends Component {
         ]
 
         let showTable = true
-        if (!categories.length) {
+        if (!category.length) {
             showTable = false
         }
 
@@ -56,7 +56,7 @@ class CategoriesShowAll extends Component {
             <Wrapper>
                 {showTable && (
                     <ReactTable
-                        data={categories}
+                        data={category}
                         columns={columns}
                         loading={isLoading}
                         defaultPageSize={10}
@@ -69,4 +69,4 @@ class CategoriesShowAll extends Component {
     }
 }
 
-export default CategoriesShowAll
+export default CategoryShowAll

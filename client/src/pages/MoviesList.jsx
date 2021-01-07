@@ -38,7 +38,7 @@ class DeleteMovie extends Component {
 
         if (
             window.confirm(
-                `Do tou want to delete the movie ${this.props.id} permanently?`,
+                `Do tou want to delete the movie ${this.props.name} permanently?`,
             )
         ) {
             api.deleteMovieById(this.props.id)

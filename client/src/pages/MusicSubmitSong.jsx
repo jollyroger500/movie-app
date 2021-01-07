@@ -51,14 +51,11 @@ class MusicSubmitSong extends Component {
     }
 
     handleChangeInputNotes = async event => {
-        const notes = event.target.validity.valid
-            ? event.target.value
-            : this.state.notes
-
+        const notes = event.target.value
         this.setState({ notes })
     }
 
-    handleIncludeSong = async () => {
+    handleUpdateSong = async () => {
         const { link, notes } = this.state
         const payload = { link, notes }
 
@@ -70,6 +67,7 @@ class MusicSubmitSong extends Component {
             })
         })
     }
+
 
     render() {
         const { link , notes } = this.state
@@ -91,8 +89,8 @@ class MusicSubmitSong extends Component {
                     onChange={this.handleChangeInputNotes}
                 />
 
-                <Button onClick={this.handleIncludeSong}>Add Song</Button>
-                <CancelButton href={'/movies/showcategories'}>Cancel</CancelButton>
+                <Button onClick={this.handleUpdateSong}>Add Song</Button>
+                <CancelButton href={'/song/showall'}>Cancel</CancelButton>
             </Wrapper>
         )
     }

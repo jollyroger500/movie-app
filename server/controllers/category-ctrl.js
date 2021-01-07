@@ -96,17 +96,17 @@ getCategoryById = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
-getCategories = async (req, res) => {
-    await Categories.find({}, (err, categories) => {
+getCategory = async (req, res) => {
+    await Category.find({}, (err, category) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
-        if (!categories.length) {
+        if (!category.length) {
             return res
                 .status(404)
                 .json({ success: false, error: `Category not found` })
         }
-        return res.status(200).json({ success: true, data: categories })
+        return res.status(200).json({ success: true, data: category })
     }).catch(err => console.log(err))
 }
 
@@ -114,6 +114,6 @@ module.exports = {
     createCategory,
     updateCategory,
     deleteCategory,
-    getCategories,
+    getCategory,
     getCategoryById,
 }

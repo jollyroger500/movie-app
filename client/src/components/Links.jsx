@@ -45,7 +45,7 @@ class Links extends Component {
                         </Item> 
                         <Item>
                             <Link to="/movies/submitsong" className="nav-link">
-                                Submit Song Category DoesntWork
+                                Submit Song
                             </Link>
                         </Item>
                         <Item>

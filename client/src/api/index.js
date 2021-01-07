@@ -11,13 +11,13 @@ export const deleteMovieById = id => api.delete(`/movie/${id}`)
 export const getMovieById = id => api.get(`/movie/${id}`)
 
 export const insertCategory = payload => api.post(`/category`, payload)
-export const getAllCategories = () => api.get(`/categories`)
+export const getAllCategory = () => api.get(`/category`)
 export const updateCategoryById = (id, payload) => api.put(`/category/${id}`, payload)
 export const deleteCategoryById = id => api.delete(`/category/${id}`)
 export const getCategoryById = id => api.get(`/category/${id}`)
 
 export const insertSong = payload => api.post(`/song`, payload)
-export const getAllSongs = () => api.get(`/songs`)
+export const getAllSong = () => api.get(`/song`)
 export const updateSongById = (id, payload) => api.put(`/song/${id}`, payload)
 export const deleteSongById = id => api.delete(`/song/${id}`)
 export const getSongById = id => api.get(`/song/${id}`)
@@ -29,12 +29,12 @@ const apis = {
     deleteMovieById,
     getMovieById,
     insertCategory,
-    getAllCategories,
+    getAllCategory,
     updateCategoryById,
     deleteCategoryById,
     getCategoryById,
     insertSong,
-    getAllSongs,
+    getAllSong,
     updateSongById,
     deleteSongById,
     getSongById

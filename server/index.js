@@ -17,9 +17,9 @@ app.use(bodyParser.json())
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('Backend Ready!')
 })
 
-app.use('/api', movieRouter, categoryRouter, songRouter)
+app.use('/api', [movieRouter, categoryRouter, songRouter]);
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
